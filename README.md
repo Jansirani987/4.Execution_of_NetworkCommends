@@ -25,66 +25,22 @@ This commands includes
 <BR>
 • Other IP Commands e.g. show ip route etc.
 <BR>
-
-
-
-PROGRAM 
-CLIENT 
-```
-import socket
-
-from pythonping import ping
-
-s = socket.socket()
-
-s.bind(('localhost', 8000))
-
-s.listen(5)
-
-print("Server is listening on port 8000...")
-
-c, addr = s.accept()
-
-print("Connected to:", addr)
-
-while True:
-
-    hostname = c.recv(1024).decode()
-
-    if not hostname:
-
-        break
-
-    try:
-
-        response = ping(hostname, verbose=False)
-
-        c.send(str(response).encode())
-
-    except Exception as e:
-
-        c.send(f"Error: {e}".encode())
-
-c.close()
-
-s.close()
-```
-SERVER
-```
-import socket 
-s=socket.socket() 
-s.connect(('localhost',8000)) 
-while True: 
-   ip=input("Enter the website you want to ping ") 
-   s.send(ip.encode()) 
-   print(s.recv(1024).decode())
-```
-
-
 ## Output
 
-![cn net commands](https://github.com/user-attachments/assets/73253896-2cbe-4098-8b1d-118aa9449855)
+![Screenshot (296)](https://github.com/user-attachments/assets/d02acef8-ea8a-42e3-9ff3-d91a633d7d35)
+![Screenshot (297)](https://github.com/user-attachments/assets/acc36d56-9290-4073-b175-7feaaa1fbf08)
 
+![Screenshot (298)](https://github.com/user-attachments/assets/f8aed832-9d6e-45ae-b02f-528f86acadd3)
+
+![Screenshot (299)](https://github.com/user-attachments/assets/1a1941ba-9719-4638-b278-6149a1f3b85d)
+![Screenshot (300)](https://github.com/user-attachments/assets/ef6e11cc-9a36-4cea-8282-a407cf037f6b)
+![Screenshot (301)](https://github.com/user-attachments/assets/b614a017-a747-47ff-9048-09127ec4523b)
+
+![Screenshot (302)](https://github.com/user-attachments/assets/c2e79e82-da37-473e-9a3c-c8ac8d5ea333)
+
+![Screenshot (304)](https://github.com/user-attachments/assets/112e3411-cfa6-4fe8-a616-e648faccfeae)
+![Screenshot (305)](https://github.com/user-attachments/assets/b7b2afbc-4094-4ea6-8ba4-bae0cd612c55)
+![Screenshot (306)](https://github.com/user-attachments/assets/21e2dfbc-a97a-4250-a73d-32bf7e2cf0d5)
 
 ## Result
 Thus Execution of Network commands Performed 
